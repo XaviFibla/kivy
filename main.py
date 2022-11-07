@@ -1,7 +1,17 @@
 from kivymd.app import MDApp
 from kivy.core.window import Window
 from kivy.utils import platform
+from kivymd.uix.screen import MDScreen
+from kivy.properties import ObjectProperty
+from kivymd.uix.scrollview import MDScrollView
 
+
+class ContentNavigationDrawer(MDScrollView):
+    manager = ObjectProperty()
+    nav_drawer = ObjectProperty()
+
+class Virtualio(MDScreen):
+    pass
 
 class MainApp(MDApp):
     def build(self):
