@@ -10,11 +10,19 @@
 
 
 ScreenManager:
+    SplashScreen:
+        name: 'splash'
     LoginScreen:
         name: 'login'
     Virtualio:
         name: 'virtualio'
  
+<SplashScreen>:
+    md_bg_color: app.theme_cls.primary_color
+    MDLabel:
+        text: "Splash Screen"
+        halign: "center"
+
 <DrawerClickableItem@MDNavigationDrawerItem>
     focus_color: "#e7e4c0"
     text_color: "#4a4939"
@@ -35,7 +43,7 @@ ScreenManager:
         MDTopAppBar:
             title: "Virtualio"
             pos_hint: {"top": 1}
-            md_bg_color: "#e7e4c0"
+            md_bg_color: app.theme_cls.primary_color
             specific_text_color: "#4a4939"
             left_action_items: [["menu", lambda x: nav_drawer.set_state("open")]]
         
