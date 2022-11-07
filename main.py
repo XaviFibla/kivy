@@ -5,6 +5,9 @@ from kivymd.uix.screen import MDScreen
 from kivy.properties import ObjectProperty
 from kivymd.uix.scrollview import MDScrollView
 
+from ctypes import windll, c_int64
+windll.user32.SetProcessDpiAwarenessContext(c_int64(-4))
+
 
 class ContentNavigationDrawer(MDScrollView):
     manager = ObjectProperty()
