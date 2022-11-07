@@ -17,13 +17,21 @@ class Virtualio(MDScreen):
     pass
 
 class MainApp(MDApp):
+    
+    sm = None
+    
     def build(self):
         if platform in ['win', 'linux', 'macosx']:
             Window.size = (800, 900)
         self.theme_cls.theme_style = "Light"
         self.icon = "images/virtualioLogo.png"
         self.title ="Virtualio"
+        self.sm = self.root
+        return self.switch_screen('login')
 
+    def switch_screen(self, screen_name='login'):
+         self.sm.current = screen_name
+    
 
 if __name__ == '__main__':
     app = MainApp()
