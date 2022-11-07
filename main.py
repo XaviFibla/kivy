@@ -1,10 +1,17 @@
 from kivymd.app import MDApp
-from kivymd.uix.label import MDLabel
+from kivy.core.window import Window
+from kivy.utils import platform
 
 
 class MainApp(MDApp):
     def build(self):
-        return MDLabel(text="Hello, World", halign="center")
+        if platform in ['win', 'linux', 'macosx']:
+            Window.size = (800, 900)
+        self.theme_cls.theme_style = "Light"
+        self.icon = "images/virtualioLogo.png"
+        self.title ="Virtualio"
 
 
-MainApp().run()
+if __name__ == '__main__':
+    app = MainApp()
+    app.run()
