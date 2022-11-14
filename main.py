@@ -9,7 +9,6 @@ from ctypes import windll, c_int64
 windll.user32.SetProcessDpiAwarenessContext(c_int64(-4))
 
 class SplashScreen(MDScreen):
-    #ETE
     def on_enter(self, *args):
         Clock.schedule_once(self.switch_to_home, 2)
     def switch_to_home(self, dt):
