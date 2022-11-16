@@ -1,4 +1,5 @@
 #:import LoginScreen views.LoginScreen
+#:import AboutScreen views.AboutScreen
 # Global UI layout dimensions
 #:import Window kivy.core.window.Window
 #:set screen_size (Window.size[0]**2 + Window.size[1]**2)**0.5
@@ -16,6 +17,7 @@ ScreenManager:
         name: 'login'
     Virtualio:
         name: 'virtualio'
+
  
 <SplashScreen>:
     md_bg_color: app.theme_cls.primary_color
@@ -39,35 +41,39 @@ ScreenManager:
     _no_ripple_effect: True
 
 <Virtualio>:
-    MDScreen:
-        MDTopAppBar:
-            title: "Virtualio"
-            pos_hint: {"top": 1}
-            md_bg_color: app.theme_cls.primary_color
-            specific_text_color: "#4a4939"
-            left_action_items: [["menu", lambda x: nav_drawer.set_state("open")]]
+    MDTopAppBar:
+        title: "Virtualio"
+        pos_hint: {"top": 1}      
+        md_bg_color: app.theme_cls.primary_color
+        specific_text_color: "#4a4939"
+        left_action_items: [["menu", lambda x: nav_drawer.set_state("open")]]
         
-        MDNavigationLayout:
-            MDScreenManager:
-                id: screen_manager
-                MDScreen:
-                    name: "screen1"
-                    MDBoxLayout:                        
-                        MDLabel:
-                            text:"Screen 1"
-                            halign: "center"
-                MDScreen:
-                    name: "screen2"                 
-                    MDIcon:
-                        icon: "gmail"
-                        pos_hint: {"center_x": .5, "center_y": .5}
-        MDNavigationDrawer:
-            id: nav_drawer    
-            elevation: 12     
-            radius:(0, 16, 16, 0)  
-            ContentNavigationDrawer:
-                manager: screen_manager
-                nav_drawer: nav_drawer
+    MDNavigationLayout:
+        MDScreenManager:
+            id: screen_manager
+            MDScreen:
+                name: "screen1"
+                MDBoxLayout:                        
+                    MDLabel:
+                        text:"Screen 1"
+                        halign: "center"
+            MDScreen:
+                name: "screen2"                 
+                MDIcon:
+                    icon: "gmail"
+                    pos_hint: {"center_x": .5, "center_y": .5}
+            MDScreen:
+                name: "about"
+                MDBoxLayout:                        
+                    AboutScreen:
+                
+    MDNavigationDrawer:
+        id: nav_drawer    
+        elevation: 12     
+        radius:(0, 16, 16, 0)  
+        ContentNavigationDrawer:
+            manager: screen_manager
+            nav_drawer: nav_drawer
 <ContentNavigationDrawer>:
     MDNavigationDrawerMenu:
         MDNavigationDrawerHeader:
@@ -93,17 +99,10 @@ ScreenManager:
         DrawerClickableItem:
             icon: "send"
             text: "Outbox"
-            on_release: 
+            on_release:           
                 root.nav_drawer.set_state("close")
-                root.manager.current="screen2"  
+                root.manager.current="about"  
 
-        MDNavigationDrawerDivider:
-
-        MDNavigationDrawerLabel:
-            text: "Labels"
-
-        DrawerLabelItem:
-            icon: "information-outline"
-            text: "Label"
+     
 
 
