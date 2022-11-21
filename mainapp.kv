@@ -1,5 +1,6 @@
 #:import LoginScreen views.LoginScreen
 #:import AboutScreen views.AboutScreen
+#:import PostScreen views.PostScreen
 # Global UI layout dimensions
 #:import Window kivy.core.window.Window
 #:set screen_size (Window.size[0]**2 + Window.size[1]**2)**0.5
@@ -62,10 +63,10 @@ ScreenManager:
                 MDIcon:
                     icon: "gmail"
                     pos_hint: {"center_x": .5, "center_y": .5}
-            MDScreen:
+            AboutScreen:
                 name: "about"
-                MDBoxLayout:                        
-                    AboutScreen:
+            PostScreen:
+                name: "post"
                 
     MDNavigationDrawer:
         id: nav_drawer    
@@ -91,14 +92,20 @@ ScreenManager:
             icon: "gmail"
             right_text: "+99"
             text_right_color: "#4a4939"
-            text: "Inbox"
+            text: "Screen 1"
             on_release: 
                 root.nav_drawer.set_state("close")
                 root.manager.current="screen1"     
 
         DrawerClickableItem:
             icon: "send"
-            text: "Outbox"
+            text: "Posts"
+            on_release:           
+                root.nav_drawer.set_state("close")
+                root.manager.current="post"  
+        DrawerClickableItem:
+            icon: "access-point"
+            text: "About"
             on_release:           
                 root.nav_drawer.set_state("close")
                 root.manager.current="about"  

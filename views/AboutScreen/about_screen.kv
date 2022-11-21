@@ -1,12 +1,10 @@
 <AboutScreen>:
+    on_enter:print("hola")
     MDBoxLayout:
         orientation: "vertical"
-        MDLabel:
-            text: "About"
-            font_size: large_font
-            halign: 'center'
-            size_hint_y: 0.2
-            theme_text_color: 'Custom'
-            text_color: app.theme_cls.primary_color
+        padding: 0,"50dp", 0, 0
+        MDScrollView:
+            MDList:
+                id: container
 
        

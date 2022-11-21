@@ -37,7 +37,7 @@ class MainApp(MDApp):
 
     def switch_screen(self, screen_name='login'):
          self.sm.current = screen_name
-    
+   
 
 if __name__ == '__main__':
     app = MainApp()
