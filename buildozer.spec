@@ -48,7 +48,7 @@ requirements = kivy==2.1.0, https://github.com/kivymd/KivyMD/archive/master.zip,
 #presplash.filename = %(source.dir)s/images/presplash.png
 
 # (str) Icon of the application
-icon.filename = %(source.dir)s/assets/virtualioLogo.png
+icon.filename = %(source.dir)s/images/virtualioLogo.png
 
 # (str) Supported orientation (one of landscape, sensorLandscape, portrait or all)
 orientation = portrait
