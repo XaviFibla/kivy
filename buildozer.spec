@@ -29,12 +29,12 @@ source.include_exts = py,png,jpg,kv,atlas
 #source.exclude_patterns = license,images/*/*.jpg
 
 # (str) Application versioning (method 1)
-#version = 0.1
+version = 0.1
 
 # (str) Application versioning (method 2)
 #version.regex = __version__ = ['"](.*)['"]
-version.regex = __version__ = ['"](\d\.\d{1,2}\.\d{1,2})['"]
-version.filename = %(source.dir)s/version.py
+#version.regex = __version__ = ['"](\d\.\d{1,2}\.\d{1,2})['"]
+#version.filename = %(source.dir)s/version.py
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
@@ -45,10 +45,10 @@ requirements = kivy==2.1.0, https://github.com/kivymd/KivyMD/archive/master.zip,
 # requirements.source.kivy = ../../kivy
 
 # (str) Presplash of the application
-presplash.filename = %(source.dir)s/images/presplash.png
+#presplash.filename = %(source.dir)s/images/presplash.png
 
 # (str) Icon of the application
-icon.filename = %(source.dir)s/images/icon.png
+icon.filename = %(source.dir)s/assets/virtualioLogo.png
 
 # (str) Supported orientation (one of landscape, sensorLandscape, portrait or all)
 orientation = portrait
@@ -62,7 +62,7 @@ orientation = portrait
 
 #
 # author = © Copyright Info
-author = © JennaSys
+author = © Fibla
 
 # change the major version of python used by the app
 osx.python_version = 3
