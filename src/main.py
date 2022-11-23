@@ -5,8 +5,8 @@ from kivymd.uix.screen import MDScreen
 from kivy.properties import ObjectProperty
 from kivymd.uix.scrollview import MDScrollView
 from kivy.clock import Clock
-from ctypes import windll, c_int64
-windll.user32.SetProcessDpiAwarenessContext(c_int64(-4))
+#from ctypes import windll, c_int64
+#windll.user32.SetProcessDpiAwarenessContext(c_int64(-4))
 
 class SplashScreen(MDScreen):
     def on_enter(self, *args):
