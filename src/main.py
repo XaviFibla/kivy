@@ -30,7 +30,7 @@ class MainApp(MDApp):
         if platform in ['win', 'linux', 'macosx']:
             Window.size = (800, 900)
         self.theme_cls.theme_style = "Light"
-        self.icon = "images/virtualioLogo.png"
+        self.icon = "assets/virtualioLogo.png"
         self.title ="Virtualio"
         self.sm = self.root
         

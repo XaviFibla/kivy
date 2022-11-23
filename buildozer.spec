@@ -1,13 +1,13 @@
 [app]
 
 # (str) Title of your application
-title = Kivy REST API Demo
+title = Kivy Test
 
 # (str) Package name
-package.name = kivy_rest
+package.name = kivy_test
 
 # (str) Package domain (needed for android/ios packaging)
-package.domain = com.jennasys
+package.domain = com.xavi
 
 # (str) Source code where the main.py live
 source.dir = ./src
