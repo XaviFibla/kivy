@@ -1,6 +1,7 @@
 #:import LoginScreen views.LoginScreen
 #:import AboutScreen views.AboutScreen
 #:import PostScreen views.PostScreen
+#:import InventoryScreen views.InventoryScreen
 # Global UI layout dimensions
 #:import Window kivy.core.window.Window
 #:set screen_size (Window.size[0]**2 + Window.size[1]**2)**0.5
@@ -67,6 +68,8 @@ ScreenManager:
                 name: "about"
             PostScreen:
                 name: "post"
+            InventoryScreen:
+                name: "inventory"
                 
     MDNavigationDrawer:
         id: nav_drawer    
@@ -109,6 +112,12 @@ ScreenManager:
             on_release:           
                 root.nav_drawer.set_state("close")
                 root.manager.current="about"  
+        DrawerClickableItem:
+            icon: "laptop-account"
+            text: "Inventory"
+            on_release:           
+                root.nav_drawer.set_state("close")
+                root.manager.current="inventory"  
 
      
 

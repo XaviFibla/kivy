@@ -8,12 +8,14 @@ from kivymd.uix.list import OneLineListItem
 load_kv(__name__)
 
 class AboutScreen(MDScreen):
-   def on_enter(self):
-       for i in range(20):
-            self.ids.container.add_widget(
-                OneLineListItem(text=f"Single-line item {i}")
-            )
-
+    def on_enter(self):
+        print("Torno a entrar")
+        for i in range(20):
+                self.ids.container.add_widget(
+                OneLineListItem(text=f"Single-line item {i}",id=str(i),on_press=self.print)
+                )
+    def print(self,row):
+        print (f"Pressed {row.id}")
     
 
    
