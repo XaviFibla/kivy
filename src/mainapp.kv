@@ -2,6 +2,7 @@
 #:import AboutScreen views.AboutScreen
 #:import PostScreen views.PostScreen
 #:import InventoryScreen views.InventoryScreen
+#:import InventoryDetailScreen views.InventoryDetailScreen
 # Global UI layout dimensions
 #:import Window kivy.core.window.Window
 #:set screen_size (Window.size[0]**2 + Window.size[1]**2)**0.5
@@ -19,6 +20,8 @@ ScreenManager:
         name: 'login'
     Virtualio:
         name: 'virtualio'
+    InventoryDetailScreen:
+        name: 'inventory-detail'
 
  
 <SplashScreen>:

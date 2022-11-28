@@ -1,0 +1,15 @@
+<InventoryDetailScreen>:
+    MDBoxLayout:
+        orientation: "vertical"
+        padding: 0
+        id: box
+
+        MDTopAppBar:
+            id: app_toolbar
+            title: "Edit"
+            anchor_title: "center"
+            left_action_items: [["close", lambda ref: root.close(ref)]]
+
+        MDScrollView:
+            MDList:
+                id: container
