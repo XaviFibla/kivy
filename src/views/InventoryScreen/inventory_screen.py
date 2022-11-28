@@ -35,7 +35,8 @@ class InventoryScreen(MDScreen):
     def camara(self, *args):
         print("Obrir Camara")
         app = MDApp.get_running_app()
-        app.switch_screen('inventory-detail')
+        app.sm.get_screen('inventory-detail').open("ID_PASSED")
+      
 
     def list_posts(self):
         self.ids["container"].clear_widgets()

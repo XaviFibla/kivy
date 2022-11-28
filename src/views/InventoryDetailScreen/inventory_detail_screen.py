@@ -19,7 +19,12 @@ class InventoryDetailScreen(MDScreen):
                 )
     def print(self,row):
         print (f"Pressed {row.id}")
-     
+
+    def open(self, id=None):
+        print("ENTRO: "+id)
+        app = MDApp.get_running_app()
+        app.switch_screen('inventory-detail')
+        
     def close(self,*args):
         print (f"Pressed CLOSE")
         app = MDApp.get_running_app()
