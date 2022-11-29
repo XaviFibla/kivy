@@ -30,14 +30,12 @@ class InventoryScreen(MDScreen):
 
     def print(self,row):
         print (f"Pressed {row.id}")
-        #app = MDApp.get_running_app()
-        #app.switch_screen('login')
+
     def camara(self, *args):
         print("Obrir Camara")
         app = MDApp.get_running_app()
         app.sm.get_screen('inventory-detail').open("ID_PASSED")
       
-
     def list_posts(self):
         self.ids["container"].clear_widgets()
         with open('assets/posts.json') as f_obj:
