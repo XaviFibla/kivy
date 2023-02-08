@@ -1,7 +1,13 @@
 <InventoryScreen>:
+    search_field: search_field
+    
+    TextInput:
+        id: search_field
+        text: root.search_text
+        on_text: root.filter_list(self.text)
     MDBoxLayout:
         orientation: "vertical"
-        padding: 0,"50dp", 0, "50dp"
+        padding: 0,"100dp", 0, "50dp"
         id: box
         MDScrollView:
             MDList:

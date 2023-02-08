@@ -5,11 +5,22 @@ from kivymd.uix.screen import MDScreen
 from utils import load_kv
 from kivymd.uix.list import OneLineListItem
 from kivymd.uix.button import MDFloatingActionButton
-
+from kivy.properties import StringProperty
 load_kv(__name__)
 
 class InventoryScreen(MDScreen):
- 
+    search_text = StringProperty("")
+
+    def filter_list(self, search_text):
+        self.ids["container"].clear_widgets()
+        with open('assets/posts.json') as f_obj:
+            data = json.load(f_obj)
+            filtered_list = [item for item in data if search_text in item]
+            for username in filtered_list:
+                self.ids["container"].add_widget(
+                OneLineListItem(text=f"User {username}",id=username,on_press=self.print)
+                )
+
     def on_enter(self):
         print("Torno a entrar")
         self.ids.box.add_widget(
